@@ -6,7 +6,7 @@ public class ShipController : MonoBehaviour
 {
     public float forwardSpeed = 25f;
     public float strafeSpeed = 7f;
-    public float hoverSpeed = 5f;
+    public float hoverSpeed = 5f; //Tehdään Input Manageriin Hover Input
 
     private float activeForwardSpeed;
     private float activeStrafeSpeed;
@@ -19,27 +19,27 @@ public class ShipController : MonoBehaviour
     public float lookRateSpeed = 90f;
     private Vector2 lookInput, screenCenter, mouseDistance;
 
-    private float rollInput;
+    private float rollInput; //Tehdään Input Manageriin Roll Input
     public float rollSpeed = 90f;
     public float rollAcceleration = 3f;
     
 
-    
-
     void Start()
     {
+        //Määritetään näytön keskipiste
         screenCenter.x = Screen.width * 0.5f;
         screenCenter.y = Screen.height * 0.5f;
 
+        //Rajoitetaan kursorin liikkuminen peli-ikkunan sisällä
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    
     void Update()
     {
         lookInput.x = Input.mousePosition.x;
         lookInput.y = Input.mousePosition.y;
 
+        //Hiiren etäisyys näytön keskipisteestä
         mouseDistance.x = (lookInput.x - screenCenter.x) / screenCenter.y;
         mouseDistance.y = (lookInput.y - screenCenter.y) / screenCenter.y;
 

@@ -9,10 +9,6 @@ public class LaserGun : MonoBehaviour
 
     public float speed = 800f;
 
-
-   
-
-    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -23,6 +19,7 @@ public class LaserGun : MonoBehaviour
 
     void ShootLaser()
     {
+        //Vasemmanpuolinen laser
         GameObject laserBeamLeft = Instantiate(laserPrefab, laserSpawnPoint1.position, Quaternion.identity);
 
         Rigidbody laserLeftRigidbody = laserBeamLeft.GetComponent<Rigidbody>();
@@ -33,7 +30,7 @@ public class LaserGun : MonoBehaviour
         
         Destroy(laserBeamLeft, 2f);
 
-        
+        //Oikeanpuolinen laser
         GameObject laserBeamRight = Instantiate(laserPrefab, laserSpawnPoint2.position, Quaternion.identity);
 
         Rigidbody laserRightRigidbody = laserBeamRight.GetComponent<Rigidbody>();
@@ -43,7 +40,5 @@ public class LaserGun : MonoBehaviour
         }
 
         Destroy(laserBeamRight, 2f);
-
-        
     }
 }
