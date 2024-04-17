@@ -1296,7 +1296,7 @@ Transform:
   m_GameObject: {fileID: 1500111232288210156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.878, y: -1.128, z: 4.02}
+  m_LocalPosition: {x: 2.878, y: -1.128, z: 6.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1968,7 +1968,7 @@ Transform:
   m_GameObject: {fileID: 2074751349428944021}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.887, y: -1.128, z: 4.02}
+  m_LocalPosition: {x: -2.887, y: -1.128, z: 6.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7286,6 +7286,8 @@ GameObject:
   - component: {fileID: 795212074547510651}
   - component: {fileID: 3630100323805485297}
   - component: {fileID: 3023873326951906853}
+  - component: {fileID: 1284919575243807566}
+  - component: {fileID: 912693942558815550}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -7327,8 +7329,8 @@ MonoBehaviour:
   forwardSpeed: 100
   strafeSpeed: 50
   hoverSpeed: 50
-  lookRateSpeed: 90
-  rollSpeed: 90
+  lookRateSpeed: 60
+  rollSpeed: 60
   rollAcceleration: 3
 --- !u!114 &795212074547510651
 MonoBehaviour:
@@ -12144,6 +12146,54 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!65 &1284919575243807566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691786072016257199}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.873114, y: 3.052351, z: 11.932888}
+  m_Center: {x: 0.008004189, y: -0.42709708, z: -0.8746412}
+--- !u!54 &912693942558815550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691786072016257199}
+  serializedVersion: 4
+  m_Mass: 50
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &7718964593853399179
 GameObject:
   m_ObjectHideFlags: 0

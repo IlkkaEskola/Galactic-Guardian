@@ -53,8 +53,18 @@ public class ShipController : MonoBehaviour
         activeStrafeSpeed = Mathf.Lerp(activeStrafeSpeed, Input.GetAxisRaw("Horizontal") * strafeSpeed, strafeAcceleration * Time.deltaTime);
         activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("Hover") * hoverSpeed, hoverAcceleration * Time.deltaTime);
 
-        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
-        transform.position += transform.right * activeStrafeSpeed * Time.deltaTime;
-        transform.position += transform.up * activeHoverSpeed * Time.deltaTime;
+        //transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
+        //transform.position += transform.right * activeStrafeSpeed * Time.deltaTime;
+        //transform.position += transform.up * activeHoverSpeed * Time.deltaTime;
+
+        
+        Vector3 movement = transform.forward * activeForwardSpeed +
+                    transform.right * activeStrafeSpeed +
+                    transform.up * activeHoverSpeed;
+
+        transform.Translate(movement * Time.deltaTime, Space.World);
+
+        //rb.AddForce(movement * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
     }
 }

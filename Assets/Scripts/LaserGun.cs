@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserGun : MonoBehaviour
@@ -40,5 +41,11 @@ public class LaserGun : MonoBehaviour
         }
 
         Destroy(laserBeamRight, 2f);
+
+        
     }
+
+    
+
+
 }
