@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+    private Rigidbody rb;
+
     public float forwardSpeed = 25f;
     public float strafeSpeed = 7f;
     public float hoverSpeed = 5f; //Tehd‰‰n Input Manageriin Hover Input
+
+    public float maxSpeed;
 
     private float activeForwardSpeed;
     private float activeStrafeSpeed;
     private float activeHoverSpeed;
 
-    private float forwardAcceleration = 2.5f;
-    private float strafeAcceleration = 2f;
-    private float hoverAcceleration = 2f;
+    public float forwardAcceleration = 2.5f;
+    public float strafeAcceleration = 2f;
+    public float hoverAcceleration = 2f;
 
     public float lookRateSpeed = 90f;
     private Vector2 lookInput, screenCenter, mouseDistance;
@@ -26,6 +30,8 @@ public class ShipController : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         //M‰‰ritet‰‰n n‰ytˆn keskipiste
         screenCenter.x = Screen.width * 0.5f;
         screenCenter.y = Screen.height * 0.5f;
@@ -34,7 +40,7 @@ public class ShipController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         lookInput.x = Input.mousePosition.x;
         lookInput.y = Input.mousePosition.y;
@@ -62,9 +68,13 @@ public class ShipController : MonoBehaviour
                     transform.right * activeStrafeSpeed +
                     transform.up * activeHoverSpeed;
 
-        transform.Translate(movement * Time.deltaTime, Space.World);
+        rb.AddForce(movement * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
-        //rb.AddForce(movement * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        //Rajoitetaan aluksen nopeutta maksiminopeuteen
+        if(rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
 
     }
 }

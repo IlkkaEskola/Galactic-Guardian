@@ -7329,6 +7329,10 @@ MonoBehaviour:
   forwardSpeed: 100
   strafeSpeed: 50
   hoverSpeed: 50
+  maxSpeed: 300
+  forwardAcceleration: 1.5
+  strafeAcceleration: 1
+  hoverAcceleration: 1
   lookRateSpeed: 60
   rollSpeed: 60
   rollAcceleration: 3
