@@ -76,5 +76,7 @@ public class ShipController : MonoBehaviour
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
 
+        rb.velocity *= 0.99f;
+
     }
 }
