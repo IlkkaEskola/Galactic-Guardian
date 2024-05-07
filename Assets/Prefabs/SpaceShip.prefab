@@ -7335,7 +7335,7 @@ MonoBehaviour:
   hoverAcceleration: 1
   lookRateSpeed: 60
   rollSpeed: 60
-  rollAcceleration: 3
+  rollAcceleration: 6
 --- !u!114 &795212074547510651
 MonoBehaviour:
   m_ObjectHideFlags: 0
