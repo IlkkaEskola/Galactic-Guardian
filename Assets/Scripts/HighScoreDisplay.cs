@@ -14,7 +14,7 @@ public class HighScoreDisplay : MonoBehaviour
     void DisplayHighScores()
     {
         List<HighScoreEntry> highScores = HighScoreManager.instance.GetHighScores();
-        highScoreText.text = "High Scores:\n";
+        highScoreText.text = "HIGH SCORES:\n";
         foreach (HighScoreEntry entry in highScores)
         {
             highScoreText.text += entry.playerName + ": " + entry.time.ToString("f2") + " seconds\n";
