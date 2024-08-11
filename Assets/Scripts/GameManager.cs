@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         float finishTime = Time.time - startTime;
-        //finishText.text = "Finished in " + finishTime.ToString("f2") + " seconds";
         HighScoreManager.instance.AddHighScore(MainMenu.playerName, finishTime);
         SceneManager.LoadScene("Main Menu");
     }

@@ -7,9 +7,9 @@ public class HighScoreManager : MonoBehaviour
 {
     public static HighScoreManager instance;
 
-    private string filePath;
-    private List<HighScoreEntry> highScores = new List<HighScoreEntry>();
-    private int maxHighScores = 5;
+    private string filePath; //Polku, johon korkeimmat pisteet tallennetaan.
+    private List<HighScoreEntry> highScores = new List<HighScoreEntry>(); //Lista pelaajien parhaista suorituksista.
+    private int maxHighScores = 5; 
 
     void Awake()
     {
@@ -23,6 +23,7 @@ public class HighScoreManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //Määritetään tiedostopolku, johon korkeimmat pisteet tallennetaan.
         filePath = Path.Combine(Application.persistentDataPath, "highscores.json");
         LoadHighScores();
     }
@@ -31,7 +32,7 @@ public class HighScoreManager : MonoBehaviour
     {
         HighScoreEntry newEntry = new HighScoreEntry { playerName = playerName, time = time };
         highScores.Add(newEntry);
-        highScores.Sort((x, y) => x.time.CompareTo(y.time));
+        highScores.Sort((x, y) => x.time.CompareTo(y.time)); //Järjestetään lista ajan perusteella.
 
         if (highScores.Count > maxHighScores)
         {
