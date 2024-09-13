@@ -10,9 +10,9 @@ public class DestroyAsteroid : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Laser"))
         {
-            Instantiate(explosionParticle, transform.position, transform.rotation);
+            //Instantiate(explosionParticle, transform.position, transform.rotation);
             Destroy(gameObject);
-            //explosionParticle.Play();
+            explosionParticle.Play();
         }
     }
 }
