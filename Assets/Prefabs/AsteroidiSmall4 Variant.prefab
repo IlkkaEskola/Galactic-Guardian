@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4103267178326995965, guid: 8dae4244b36a8c14187c05d94959c408,
+        type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 4627033644232964404}
     - target: {fileID: 1627516141498687760, guid: 8dae4244b36a8c14187c05d94959c408,
         type: 3}
       propertyPath: explosionParticle

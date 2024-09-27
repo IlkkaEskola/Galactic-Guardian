@@ -11,7 +11,7 @@ public class DestroyAsteroid : MonoBehaviour
         if (collision.gameObject.CompareTag("Laser"))
         {
             //Instantiate(explosionParticle, transform.position, transform.rotation);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.5f);
             explosionParticle.Play();
         }
     }
